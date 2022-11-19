@@ -24,9 +24,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install dependencies
-      run: npm install
+      run: cd tiktok-backend && npm install
     - name: Build application
-      run: npm run build --if-present
+      run: cd tiktok-backend && npm run build --if-present
 
   unit_test:
     name: Unit testing
@@ -43,9 +43,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install dependencies
-      run: npm install
+      run: cd tiktok-backend && npm install
     - name: Execute unit testing
-      run: echo "Test"
+      run: cd tiktok-backend && echo "Test"
 
   static_code_analysis:
     name: Static code analysis
